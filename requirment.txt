@@ -1,3 +1,4 @@
 streamlit
 langchain_google_genai
 langchain_core.prompts
+python-dotenv 
