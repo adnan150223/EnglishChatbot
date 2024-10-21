@@ -2,11 +2,26 @@ import streamlit as st
 import random
 import json
 import time
+import os
+from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 
 # Step 1: Set up the Google API key
-GOOGLE_API_KEY = "AIzaSyCbduTYZUlETGfcUWe8xyZli1u3tPi7DWg"
+
+# Step 1: Load environment variables from the .env file
+load_dotenv()  # This will load the .env file automatically
+
+# Step 2: Get the Google API key from the environment
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+# Check if the API key was loaded correctly
+if not GOOGLE_API_KEY:
+    st.error("Google API key not found. Please check your .env file.")
+    st.stop()
+
+
+# ... Rest of your code remains unchanged
 
 # Step 2: Initialize the LLM Model (Gemini or Text-Bison)
 try:
@@ -196,7 +211,7 @@ def main():
         st.write(
             "Hi! I am Taksa, a little creation brought to life by someone very special: Muhammad Adnan. "
             "He is a passionate student of Electrical Engineering at NUST. But beyond his studies, Adnan poured his heart "
-            "into building me—not just as a technical project, but as a meaningful gift. He named me after someone who means the world to him—his girlfriend. "
+            "into building me—not just as a technical project, but as a meaningful gift. He named me after someone who means the world to him—his Queen. "
             "Adnan wanted to gift me to her on her birthday, as a token of his love and admiration. Every word I speak and every answer I give carries a little "
             "bit of the thought and care he put into making me, just for her."
          )
