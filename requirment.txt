@@ -1,4 +1,3 @@
 streamlit
-langchain_google_genai # Or latest version from PyPI
-langchain-core
-google-generative-ai==0.3.5  # Required backend API for Gemini models
+langchain_google_genai
+langchain_core.prompts
