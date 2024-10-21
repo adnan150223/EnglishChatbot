@@ -1,5 +1,5 @@
 streamlit
-langchain_google_genai
+langchain-google-genai
 langchain_core.prompts
 python-dotenv==1.0.0
 dotenv
